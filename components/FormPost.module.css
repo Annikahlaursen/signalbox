@@ -1,0 +1,87 @@
+.formPost {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+  align-items: start;
+  max-width: 800px;
+  margin: 20px 0;
+
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--foreground);
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formPost label {
+  font-weight: 500;
+  padding-top: 12px;
+  color: var(--text-primary);
+}
+
+.formPost input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  background-color: var(--foreground);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.formPost input:focus {
+  outline: none;
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.imagePreview {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  grid-column: 2;
+}
+
+.btns {
+  grid-column: 2;
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btns button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: var(--text-primary);
+  color: var(--background);
+}
+
+.btns button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .formPost {
+    grid-template-columns: 1fr;
+  }
+
+  .formPost label {
+    padding-top: 0;
+  }
+
+  .imagePreview {
+    grid-column: 1;
+  }
+
+  .btns {
+    grid-column: 1;
+  }
+}
