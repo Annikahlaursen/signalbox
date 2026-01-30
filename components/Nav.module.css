@@ -1,0 +1,29 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px;
+  background-color: var(--foreground);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
+}
+
+.navLink {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: var(--text-primary);
+}
+
+.navLink:hover {
+  background-color: var(--background);
+}
+
+.active {
+  background-color: var(--background);
+}
