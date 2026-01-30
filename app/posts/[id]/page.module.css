@@ -1,0 +1,49 @@
+.postPage {
+  min-height: 100vh;
+  padding: 80px 20px 40px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.container h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.postCard {
+  background-color: var(--foreground);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btns {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btnUpdate {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: var(--text-primary);
+  color: var(--background);
+}
+
+.btnUpdate:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
