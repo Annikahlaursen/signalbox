@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitContactForm } from "@/lib/wordpress";
 import styles from "../app/page.module.css";
 
 export default function SignupForm() {
@@ -14,33 +15,10 @@ export default function SignupForm() {
     setMessage("");
 
     try {
-      // Replace with your WordPress site URL
-      const wordpressUrl =
-        process.env.NEXT_PUBLIC_WORDPRESS_URL ||
-        "https://great-northern-games.com/";
-
-      const response = await fetch(
-        `${wordpressUrl}/wp-json/contact-form-7/v1/contact-forms/YOUR_FORM_ID/feedback`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-          }),
-        },
-      );
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setStatus("success");
-        setMessage("Tak! Du er nu tilmeldt playtest.");
-        setEmail("");
-      } else {
-        throw new Error(data.message || "Noget gik galt");
-      }
+      await submitContactForm(email);
+      setStatus("success");
+      setMessage("Tak! Du er nu tilmeldt playtest.");
+      setEmail("");
     } catch (error) {
       setStatus("error");
       setMessage(error.message || "Der skete en fejl. Prøv igen senere.");
